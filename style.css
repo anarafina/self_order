@@ -1,0 +1,75 @@
+/* style.css */
+.slide-in {
+    animation: slideIn 0.3s forwards;
+}
+.slide-out {
+    animation: slideOut 0.3s forwards;
+}
+@keyframes slideIn {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+@keyframes slideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+}
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #16a34a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* --- STYLES BARU UNTUK REKOMENDASI MENU --- */
+#recommendedMenu .menu-item {
+    flex-shrink: 0; /* Memastikan item tidak menyusut dan tetap memiliki lebar tetap */
+    width: 140px;   /* Lebar tetap untuk setiap item rekomendasi */
+    padding: 0.5rem; /* Sesuaikan padding agar lebih ringkas */
+}
+
+#recommendedMenu .menu-item img {
+    height: 80px; /* Tinggi gambar yang lebih kecil */
+    width: 100%; /* Lebar gambar mengisi kontainer */
+    object-fit: cover;
+    border-radius: 0.25rem; /* Sudut sedikit membulat untuk gambar */
+    margin-bottom: 0.5rem; /* Jarak bawah gambar */
+}
+
+#recommendedMenu .menu-item h3 {
+    font-size: 0.75rem; /* Ukuran font lebih kecil (text-xs) */
+    font-weight: 600; /* Font semibold */
+    white-space: nowrap; /* Mencegah teks melipat baris */
+    overflow: hidden; /* Menyembunyikan teks yang berlebih */
+    text-overflow: ellipsis; /* Menambahkan elipsis (...) jika teks terpotong */
+    margin-bottom: 0.25rem; /* Jarak bawah judul */
+}
+
+#recommendedMenu .menu-item p {
+    font-size: 0.75rem; /* Ukuran font lebih kecil (text-xs) */
+    font-weight: 600; /* Font semibold */
+    color: #16a34a; /* Warna hijau-600 */
+}
+
+/* Menyembunyikan scrollbar (kompatibilitas lintas browser) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, Opera */
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* Untuk IE dan Edge */
+    scrollbar-width: none;  /* Untuk Firefox */
+}
